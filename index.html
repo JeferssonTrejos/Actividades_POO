@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="menus">
+        <div class="menu card">
+            <h3 class="titulo">Menu</h3>
+            <div class="producto">
+                <label for="">Nombre del usurio:</label><br>
+                <input type="text" id="nombre" placeholder="Nombre" value="" required>
+            </div>
+
+            <div class="producto">
+                <input type="checkbox" name="comida" value="Hamburguesas con papas">Hamburguesas con papas <br>
+                <input type="number" name="cantidad" placeholder="Cantidad">
+            </div>
+
+            <div class="producto">
+                <input type="checkbox" name="comida" value="Tacos de Birria">Tacos de Birria <br>
+                <input type="number" name="cantidad" placeholder="Cantidad">
+            </div>
+
+            <div class="producto">
+                <input type="checkbox" name="comida" value="Nachos">Nachos <br>
+                <input type="number" name="cantidad" placeholder="Cantidad">
+            </div>
+
+            <div class="producto">
+                <input type="checkbox" name="comida" value="Pepsi">Pepsi <br>
+                <input type="number" name="cantidad" placeholder="Cantidad">
+            </div>
+
+            <input class="BotonEnviar" type="button" value="Ordenar" onclick="Ordenar()">
+        </div>
+        <div class="cocina card">
+            <H3 class="titulo">Cocina</H3>
+            <div id="PedidoCocina">
+
+            </div>
+        </div>
+    </section>
+    <section class="estado card">
+        <h3 class="titulo">Estado de la orden</h3>
+        <div id="pedidos">
+
+        </div>
+    </section>
+</body>
+<script src="./js/main.js"></script>
+
+</html>
