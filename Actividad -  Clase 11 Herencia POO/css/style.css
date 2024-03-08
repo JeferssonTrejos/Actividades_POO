@@ -1,0 +1,93 @@
+* {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.350);
+}
+
+.menus {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px
+}
+
+.card {
+    background-color: white;
+    width: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.titulo {
+    margin: 0;
+    text-align: center;
+
+}
+
+.producto {
+    background-color: rgba(128, 128, 128, 0.500);
+    padding: 5px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.BotonEnviar {
+    background-color: rgba(128, 128, 128, 0.300);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.cocina {
+    min-width: 400px;
+
+}
+
+.pedido {
+    background-color: rgba(128, 128, 128, 0.250);
+    display: flex;
+
+    div {
+        width: 100%;
+    }
+
+    h4 {
+        background-color: rgba(255, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 4px;
+        box-sizing: border-box;
+        border-radius: 5px;
+
+    }
+
+    * {
+        margin: 0;
+    }
+
+    ;
+}
+
+.estado {
+
+    display: inline-block;
+    min-width: 400px;
+
+}
+
+.card .pedido {
+    background-color: rgba(128, 128, 128, 0.500);
+    max-width: 500px;
+
+    h4 {
+        white-space: nowrap;
+        margin-left: 10px;
+    }
+}
