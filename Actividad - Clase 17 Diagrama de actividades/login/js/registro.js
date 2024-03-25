@@ -28,20 +28,35 @@ class Registrar extends usuario {
 
 };
 
+let nombre = document.getElementById('nombre')
+let fechanacimiento = document.getElementById('fechanacimiento')
+let genero = document.getElementById('genero')
+let departamento = document.getElementById('departamento')
+let ciudad = document.getElementById('ciudad')
+let numero = document.getElementById('numero')
+let descripcion = document.getElementById('descripcion')
 
 function registrar() {
-    let nombre = document.getElementById('nombre').value
-    let fechanacimiento = document.getElementById('fechanacimiento').value
-    let genero = document.getElementById('genero').value
-    let departamento = document.getElementById('departamento').value
-    let ciudad = document.getElementById('ciudad').value
-    let numero = document.getElementById('numero').value
-    let descripcion = document.getElementById('descripcion').value
-
-    let registrar = new Registrar(nombre, fechanacimiento, genero, departamento, ciudad, numero, descripcion)
-    registrar.saveinfo();
 
     alertify.success('Datos registrados');
-    setTimeout(e =>{window.location.href = './usuario.html';}, 2000);
+    let Url = `./usuario.html?nombre=${encodeURIComponent(nombre.value)}
+               &fecha=${encodeURIComponent(fechanacimiento.value)}
+               &genero=${encodeURIComponent(genero.value)}
+               &departamento=${encodeURIComponent(departamento.value)}
+               &ciudad=${encodeURIComponent(ciudad.value)}
+               &numero=${encodeURIComponent(numero.value)}
+               &descripcion=${encodeURIComponent(descripcion.value)}            
+    `;
+
+    setTimeout(e => { window.location.href = Url }, 2000);
 }
 
+let url = new URL(window.location.href);
+
+nombre.value = url.searchParams.get("nombre");
+fechanacimiento.value = url.searchParams.get("fecha");
+genero.value = url.searchParams.get("genero");
+departamento.value = url.searchParams.get("departamento");
+ciudad.value = url.searchParams.get("ciudad");
+numero.value = url.searchParams.get("numero");
+descripcion.value = url.searchParams.get("descripcion");

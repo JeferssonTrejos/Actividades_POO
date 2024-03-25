@@ -26,15 +26,29 @@ class Perfil extends usuario {
 
 };
 
+let url = new URL(window.location.href);
 
-const PerfilUsuario = new Perfil(
-    localStorage.getItem("nombre"),
-    localStorage.getItem("fechanacimiento"),
-    localStorage.getItem("genero"),
-    localStorage.getItem("departamento"),
-    localStorage.getItem("ciudad"),
-    localStorage.getItem("numero"),
-    localStorage.getItem("descripcion")
-);
+let nombre = url.searchParams.get("nombre");
+let fecha = url.searchParams.get("fecha");
+let genero = url.searchParams.get("genero");
+let departamento = url.searchParams.get("departamento");
+let ciudad = url.searchParams.get("ciudad");
+let numero = url.searchParams.get("numero");
+let descripcion = url.searchParams.get("descripcion");
 
+const PerfilUsuario = new Perfil(nombre, fecha, genero, departamento, ciudad, numero, descripcion);
 PerfilUsuario.asignar()
+
+function editar() {
+    let Url = `
+    ./registro.html?nombre=${encodeURIComponent(nombre)}
+    &fecha=${encodeURIComponent(fecha)}
+    &genero=${encodeURIComponent(genero)}
+    &departamento=${encodeURIComponent(departamento)}
+    &ciudad=${encodeURIComponent(ciudad)}
+    &numero=${encodeURIComponent(numero)}
+    &descripcion=${encodeURIComponent(descripcion)}            
+`;
+
+    window.location.href = Url;
+}

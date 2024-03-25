@@ -49,6 +49,6 @@ function login() {
     let user = document.getElementById('user').value
     let pwd = document.getElementById('pwd').value
 
-    let NuevoUsuario = new usuario('William', '123', user, pwd)
+    let NuevoUsuario = new usuario('Jeffer', 'tres', user, pwd)
     NuevoUsuario.validar()
 }
