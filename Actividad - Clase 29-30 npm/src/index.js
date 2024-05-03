@@ -15,7 +15,7 @@ class Email {
 
     async enviar(emailData) {
         const send = await this.transport.sendMail({
-            from: emailData['de'],
+            from: `"${emailData['remitente']} " <jeffersonbladimirlovo@gmail.com>` ,
             to: emailData['para'],
             subject: emailData['asunto'],
             text: emailData['cuerpo']
@@ -29,7 +29,7 @@ const email = new Email();
 
 async function enviar(remitente, destinatario, asunto, cuerpo) {
     const emailData = {
-        'de': remitente,
+        'remitente': remitente,
         'para': destinatario,
         'asunto': asunto,
         'cuerpo': cuerpo,
