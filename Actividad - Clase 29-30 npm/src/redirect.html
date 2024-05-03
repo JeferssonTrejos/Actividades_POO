@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>successful</title>
+</head>
+
+<body>
+    <h2>Correo electronico enviado</h2>
+    <h2 id="h2">redirecionando</h2>
+</body>
+
+<script>
+    const h2 = document.getElementById('h2');
+
+    let tiempoRestante = 5;
+    const intervalo = setInterval(() => {
+        tiempoRestante--;
+        h2.textContent = `redirecionando ${tiempoRestante}`
+
+        if (tiempoRestante === 0) {
+            clearInterval(intervalo);
+            window.location.href = "/";
+
+        }
+    }, 1000);
+
+
+
+</script>
+
+</html>
