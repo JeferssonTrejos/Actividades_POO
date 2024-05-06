@@ -3,10 +3,8 @@ const app = express();
 const port = 3000;
 const { enviar } = require('./src/index.js');
 
-
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/src/index.html');
-
 });
 
 app.get('/send-email', async (req, res) => {
@@ -24,6 +22,7 @@ app.get('/send-email', async (req, res) => {
     } catch (error) {
         res.send('Error no enviado', error)
     }
+
 });
 
 app.listen(port, () => {

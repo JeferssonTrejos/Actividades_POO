@@ -40,13 +40,6 @@ async function enviar(remitente, destinatario, asunto, cuerpo) {
     return send;
 }
 
-// enviar(
-//     'jeffersonbladimirlovo@gmail.com',
-//     'yosoyjbl@gmail.com',
-//     'HOLA',
-//     'hola mundo'
-// )
-
 module.exports = {
     enviar: enviar, // Especifica las funciones que quieres exportar
 };
