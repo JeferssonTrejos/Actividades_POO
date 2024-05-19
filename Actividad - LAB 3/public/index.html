@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[type="submit"] {
+        padding: 5px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.40);
+
+    }
+
+    .forms {
+        display: flex;
+        justify-content: center;
+    }
+
+    .a1 {
+        display: flex;
+        background-color: rgba(128, 128, 128, 0.5);
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .a2 {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(128, 128, 128, 0.5);
+        margin: 10px;
+        border-radius: 10px;
+
+        span{
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.20);
+        border-radius: 10px;
+    }
+
+
+    .direccion {
+        background-color: rgba(190, 190, 190, 0.6);
+        padding: 5px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    H3 {
+        margin: 4px auto;
+    }
+
+    hr{
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div class="forms">
+        <div class="a1">
+            <!-- AGREGAR -->
+            <form id="miFormulario">
+                <h3>NUEVO REGISTRO</h3>
+                <label for="">representante</label>
+                <input type="text" name="representante" id="representante">
+
+                <label for="">nombre</label>
+                <input type="text" name="nombre" id="nombre">
+
+                <label for="">habitantes</label>
+                <input type="number" name="habitantes" id="habitantes">
+
+                <label for="">Direccion:</label>
+                <div class="direccion">
+                    <label for="">colonia</label><br>
+                    <input type="text" name="colonia" id="colonia"><br>
+
+                    <label for="">referencia</label><br>
+                    <input type="text" name="referencia" id="referencia"><br>
+
+                    <label for="">numero</label><br>
+                    <input type="number" name="numero" id="numero"><br>
+                </div>
+
+                <label for="">salariopromedio</label>
+                <input type="number" name="salariopromedio" id="salariopromedio"><br>
+
+
+                <input type="submit" value="Registrar"></input>
+            </form>
+
+            <!-- ELIMINAR -->
+            <form action="" id="formDelete">
+                <h3>ELIMINAR</h3>
+                <label for="">ID del registro</label>
+                <input type="text" name="idDelete" id="idDelete"><br>
+
+                <input type="submit" value="Eliminar">
+            </form>
+
+
+        </div>
+        <div class="a1">
+            <form id="formGetData">
+                <h3>OBTENER REGISTRO</h3>
+                <label for="">ID del registro</label>
+                <input type="text" name="idUpdate" id="idUpdate"><br>
+
+                <input type="submit" value="Obtener">
+            </form>
+            <!-- ACTUALIZAR -->
+            <form id="formUpdate">
+                <h3>MODIFICAR REGISTRO</h3>
+                <input type="text" name="idVivienda" id="idVivienda" hidden>
+                <label for="">representante</label>
+                <input type="text" name="representante0" id="representante0">
+
+                <label for="">nombre</label>
+                <input type="text" name="nombre0" id="nombre0">
+
+                <label for="">habitantes</label>
+                <input type="number" name="habitantes0" id="habitantes0">
+
+                <label for="">Direccion:</label>
+                <div class="direccion">
+                    <label for="">colonia</label><br>
+                    <input type="text" name="colonia0" id="colonia0"><br>
+
+                    <label for="">referencia</label><br>
+                    <input type="text" name="referencia0" id="referencia0"><br>
+
+                    <label for="">numero</label><br>
+                    <input type="number" name="numero0" id="numero0"><br>
+                </div>
+                <label for="">salariopromedio</label>
+                <input type="number" name="salariopromedio0" id="salariopromedio0">
+                <br>
+
+                <input type="submit" value="Actualizar"></input>
+            </form>
+        </div>
+    </div>
+
+    <div class="a2" id="allDataContainer" style="margin: 0 11%; padding: 10px; box-sizing: border-box;">
+        <button style="width:20%; margin: 0 40%;" id="btnGet">Get all</button>
+        <!-- <label for="">nombre: </label>
+        <span>df </span>
+
+        <label for="">habitantes: </label>
+        <span>dsdsds</span>
+
+        <label for="">Direccion:</label>
+        <div class="direccion">
+            <label for="">colonia: </label>
+            <span>ds</span><br>
+
+            <label for="">referencia: </label>
+            <span>ds</span><br>
+
+            <label for="">numero: </label>
+            <span>ds</span><br>
+        </div>
+
+        <label for="">salariopromedio: </label>
+        <span>ds</span>
+        <br> -->
+        
+    </div>
+
+</body>
+<script src="./main.js"></script>
+
+</html>
