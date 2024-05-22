@@ -8,8 +8,6 @@ ruta.get('/', async (req, res) => {
         const viviendas = await Vivienda.find();
         res.json(viviendas);
 
-        console.log(`------------ GET En ruta '/' ------------`);
-        console.log(viviendas);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -22,8 +20,6 @@ ruta.post('/', async (req, res) => {
         const nuevaVivienda = await vivienda.save()
         res.status(201).json(nuevaVivienda);
 
-        console.log(`------------ POST En ruta '/' ------------`);
-        console.log(nuevaVivienda);
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
@@ -33,14 +29,12 @@ ruta.post('/', async (req, res) => {
 ruta.get('/:id', getVivienda, (req, res) => {
     res.json(res.vivienda);
 
-    console.log(`------------ GET En ruta '/:id' ------------`);
-    console.log(res.vivienda);
 });
 
 async function getVivienda(req, res, next) {
     let vivienda;
     try {
-        vivienda = await Vivienda.findById(req.query.id)
+        vivienda = await Vivienda.findById(req.params.id)
         if (vivienda == null) {
             return res.status(404).json({ message: 'vivienda no encontrada' })
         }
@@ -70,8 +64,6 @@ ruta.put('/:id', getVivienda, async (req, res) => {
         const nuevaVivienda = await res.vivienda.save()
         res.status(201).json(nuevaVivienda);
 
-        console.log(`------------ PUT En ruta '/:id' ------------`);
-        console.log(nuevaVivienda);
     } catch (error) {
         res.status(500).send(error.message)
     }
@@ -80,11 +72,9 @@ ruta.put('/:id', getVivienda, async (req, res) => {
 // Eleminar por ID
 ruta.delete('/:id', async (req, res) => {
     try {
-        const deleteVivienda = await Vivienda.findByIdAndDelete(req.query.id)
+        const deleteVivienda = await Vivienda.findByIdAndDelete(req.params.id)
         res.status(201).json(deleteVivienda);
         
-        console.log(`------------ DELETE En ruta '/:id' ------------`);
-        console.log(deleteVivienda);
     } catch (error) {
         res.status(500).send(error.message)
     }
